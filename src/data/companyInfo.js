@@ -24,10 +24,10 @@ export const navigation = [
 ]
 
 export const contactInfo = {
-  address: 'Kathmandu, Nepal', // PLACEHOLDER — replace with exact office address
-  addressNote: '[Street address placeholder]',
-  phone: '+977-1-XXXXXXX', // PLACEHOLDER
-  email: 'info@shivakailash.example.com', // PLACEHOLDER
+  address: 'Samakhusi, Kathmandu, Nepal', // PLACEHOLDER — replace with exact office address
+  // addressNote: '[Street address placeholder]',
+  phone: '+9779851026116', // PLACEHOLDER
+  email: 'info@shivakailashrealstate.com.np', // PLACEHOLDER
   hours: 'Sunday – Friday, 10:00 AM – 5:00 PM',
   social: [
     { label: 'Facebook', href: '#' },

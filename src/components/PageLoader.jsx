@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { companyInfo } from '../data/companyInfo'
 import { usePrefersReducedMotion } from '../hooks/useReducedMotion'
+import logoIcon from '../logo-icon.png'
 
 export default function PageLoader({ onFinish }) {
   const [progress, setProgress] = useState(0)
@@ -55,10 +56,12 @@ export default function PageLoader({ onFinish }) {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="font-display text-6xl md:text-7xl tracking-tight text-[#F5F1E8]">
-              {companyInfo.initials}
-            </span>
-            <span className="mt-3 text-[10px] tracking-widest2 uppercase text-[#A7A39A] text-center max-w-xs px-4">
+            <img
+              src={logoIcon}
+              alt={`${companyInfo.name} logo`}
+              className="h-20 md:h-24 w-auto brightness-0 invert"
+            />
+            <span className="mt-4 text-[10px] tracking-widest2 uppercase text-[#A7A39A] text-center max-w-xs px-4">
               {companyInfo.shortName}
             </span>
           </motion.div>

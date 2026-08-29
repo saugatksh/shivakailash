@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { companyInfo, navigation } from '../data/companyInfo'
 import ThemeToggle from './ThemeToggle'
 import MagneticButton from './MagneticButton'
+import logoIcon from '../logo-icon.png'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -41,14 +42,14 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-editorial flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group" aria-label={companyInfo.name}>
-            <span
-              className={`font-display text-xl md:text-2xl tracking-tight transition-colors duration-500 ${
-                overDarkPhoto ? 'text-white' : 'text-ink'
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label={companyInfo.name}>
+            <img
+              src={logoIcon}
+              alt={`${companyInfo.name} logo`}
+              className={`h-9 md:h-10 w-auto transition-all duration-500 ${
+                overDarkPhoto ? 'brightness-0 invert' : ''
               }`}
-            >
-              {companyInfo.initials}
-            </span>
+            />
             <span
               className={`hidden md:block text-[11px] leading-tight tracking-wide uppercase mt-0.5 max-w-[220px] transition-colors duration-500 ${
                 overDarkPhoto ? 'text-white/60' : 'text-muted'

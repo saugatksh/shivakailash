@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { companyInfo, navigation, contactInfo, services } from '../data/companyInfo'
+import logoIcon from '../logo-icon.png'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,9 +11,13 @@ export default function Footer() {
       <div className="container-editorial pt-16">
         <div className="grid md:grid-cols-[1.6fr_1fr_1fr_1.2fr] gap-12">
           <div>
-            <Link to="/" className="font-display text-2xl text-ink">
-              {companyInfo.initials}
-              <span className="ml-2 text-xs tracking-widest2 uppercase text-muted align-middle">
+            <Link to="/" className="flex items-center gap-2.5">
+              <img
+                src={logoIcon}
+                alt={`${companyInfo.name} logo`}
+                className="h-10 w-auto"
+              />
+              <span className="text-xs tracking-widest2 uppercase text-muted align-middle">
                 {companyInfo.shortName}
               </span>
             </Link>
