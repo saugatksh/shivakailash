@@ -27,7 +27,7 @@ export const contactInfo = {
   address: 'Samakhusi, Kathmandu, Nepal', // PLACEHOLDER — replace with exact office address
   // addressNote: '[Street address placeholder]',
   phone: '+9779851026116', // PLACEHOLDER
-  email: 'info@shivakailashrealstate.com.np', // PLACEHOLDER
+  email: 'namaste@gmail.com', // PLACEHOLDER
   hours: 'Sunday – Friday, 10:00 AM – 5:00 PM',
   social: [
     { label: 'Facebook', href: '#' },
