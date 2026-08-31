@@ -9,16 +9,37 @@ const initialState = { name: '', email: '', phone: '', subject: '', message: '' 
 
 function validate(values) {
   const errors = {}
-  if (!values.name.trim()) errors.name = 'Please enter your name.'
+
+  if (!values.name.trim()) {
+    errors.name = 'Please enter your name.'
+  }
+
   if (!values.email.trim()) {
     errors.email = 'Please enter your email.'
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     errors.email = 'Please enter a valid email address.'
   }
-  if (!values.subject.trim()) errors.subject = 'Please enter a subject.'
-  if (!values.message.trim()) errors.message = 'Please enter a message.'
+
+  if (values.phone.trim()) {
+    const phone = values.phone.replace(/\D/g, '')
+
+    if (!/^9[678]\d{8}$/.test(phone)) {
+      errors.phone = 'Please enter a valid 10-digit Nepal mobile number.'
+    }
+  }
+
+
+  if (!values.subject.trim()) {
+    errors.subject = 'Please enter a subject.'
+  }
+
+  if (!values.message.trim()) {
+    errors.message = 'Please enter a message.'
+  }
+
   return errors
 }
+
 
 export default function Contact() {
   const [values, setValues] = useState(initialState)
@@ -32,20 +53,30 @@ export default function Contact() {
     if (errors[name]) setErrors((err) => ({ ...err, [name]: undefined }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const validationErrors = validate(values)
     setErrors(validationErrors)
     if (Object.keys(validationErrors).length > 0) return
 
     setSubmitting(true)
-    // Frontend-only: no backend endpoint has been provided.
-    // Replace this block with a real API call once an endpoint exists.
-    setTimeout(() => {
+
+    try {
+      const res = await fetch("https://shivakailash-contact-worker.boharasaugat23.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      })
+
+      if (!res.ok) throw new Error("Failed to send")
+
       setSubmitting(false)
       setSubmitted(true)
       setValues(initialState)
-    }, 900)
+    } catch (err) {
+      setSubmitting(false)
+      setErrors({ message: "Something went wrong. Please try again or email us directly." })
+    }
   }
 
   const fieldClass = (field) =>
@@ -202,10 +233,28 @@ export default function Contact() {
                         id="phone"
                         name="phone"
                         type="tel"
+                        inputMode="numeric"
+                        maxLength={10}
+                        autoComplete="tel"
+                        placeholder="98XXXXXXXX"
                         value={values.phone}
-                        onChange={handleChange}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/\D/g, '').slice(0, 10)
+                          setValues((v) => ({ ...v, phone: value }))
+                          if (errors.phone) {
+                            setErrors((err) => ({ ...err, phone: undefined }))
+                          }
+                        }}
                         className={fieldClass('phone')}
+                        aria-invalid={Boolean(errors.phone)}
+                        aria-describedby={errors.phone ? 'phone-error' : undefined}
                       />
+
+                      {errors.phone && (
+                        <p id="phone-error" className="text-xs text-red-500 mt-1.5">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <label htmlFor="subject" className="text-xs tracking-widest2 uppercase text-muted">
