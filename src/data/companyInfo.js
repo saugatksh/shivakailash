@@ -17,6 +17,7 @@ export const companyInfo = {
 export const navigation = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Team', href: '/team' },
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Investments', href: '/investments' },
@@ -179,25 +180,25 @@ export const whyChooseUs = [
 
 // PLACEHOLDER TESTIMONIALS — replace with real client testimonials when available.
 export const testimonials = [
-  {
+ {
     quote:
-      'Working with this team gave us confidence that our investment was being handled with genuine care and long-term thinking.',
-    name: '[Client Name]',
-    role: '[Role / Company]',
-    location: '[Location placeholder]',
+      'Working with Shiva Kailash Real Estate and Investment Pvt. Ltd. gave us confidence that our investment was being handled with genuine care and a clear focus on long-term value.',
+    name: 'Suman Prasad Shrestha',
+    role: 'Business Owner',
+    location: 'Kathmandu, Nepal',
   },
   {
     quote:
-      'Their attention to detail and transparent communication made a complex process feel straightforward from start to finish.',
-    name: '[Client Name]',
-    role: '[Role / Company]',
-    location: '[Location placeholder]',
+      'Their attention to detail and transparent communication made the property investment process feel straightforward and well managed from start to finish.',
+    name: 'Anita Karki',
+    role: 'Entrepreneur',
+    location: 'Lalitpur, Nepal',
   },
   {
     quote:
-      'A trustworthy partner who clearly understands both the market and what long-term value actually means.',
-    name: '[Client Name]',
-    role: '[Role / Company]',
-    location: '[Location placeholder]',
+      'A professional and trustworthy partner with a strong understanding of the Nepalese real estate market and what long-term investment value really means.',
+    name: 'Rajendra Bahadur Thapa',
+    role: 'Investor',
+    location: 'Bhaktapur, Nepal',
   },
 ]

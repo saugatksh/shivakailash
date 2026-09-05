@@ -7,7 +7,7 @@ export default function WhyChooseUs() {
     <section className="py-24 md:py-32 bg-bg">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14">
-          <SectionHeading index="05" eyebrow="Why Choose Us" title="A Partner Worth Building With" />
+          <SectionHeading index="06" eyebrow="Why Choose Us" title="A Partner Worth Building With" />
 
           <div className="divide-y divide-line hairline">
             {whyChooseUs.map((item, i) => (

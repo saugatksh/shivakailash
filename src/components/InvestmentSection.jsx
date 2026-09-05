@@ -9,7 +9,7 @@ export default function InvestmentSection() {
       <ContourMotif className="absolute inset-0 w-full h-full text-white" opacity={0.12} />
       <div className="container-editorial relative">
         <SectionHeading
-          index="04"
+          index="05"
           eyebrow="Investment Philosophy"
           title="Invest in Possibility. Build for Tomorrow."
           description="Every opportunity we pursue is grounded in careful analysis, patient strategy, and a long-term view of value creation."

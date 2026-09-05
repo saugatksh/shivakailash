@@ -12,6 +12,7 @@ import PageTransition from './components/PageTransition'
 
 import Home from './pages/Home'
 import About from './pages/About'
+import Team from './pages/Team'
 import Services from './pages/Services'
 import Projects from './pages/Projects'
 import Investments from './pages/Investments'
@@ -40,6 +41,7 @@ export default function App() {
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                 <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+                <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
                 <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
                 <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
                 <Route path="/investments" element={<PageTransition><Investments /></PageTransition>} />

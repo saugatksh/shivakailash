@@ -62,7 +62,7 @@ export default function ProjectsSection() {
       <div className="container-editorial">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <SectionHeading
-            index="03"
+            index="04"
             eyebrow="Featured Work"
             title="Projects Designed With Intention"
           />

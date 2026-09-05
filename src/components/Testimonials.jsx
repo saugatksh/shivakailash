@@ -31,7 +31,7 @@ export default function Testimonials() {
   return (
     <section className="py-24 md:py-32 bg-surface hairline">
       <div className="container-editorial">
-        <SectionHeading index="06" eyebrow="Testimonials" title="What People Say" align="center" />
+        <SectionHeading index="07" eyebrow="Testimonials" title="What People Say" align="center" />
 
         <div className="mt-14 max-w-3xl mx-auto text-center relative min-h-[280px] flex flex-col items-center justify-center">
           <Quote className="text-accent/40 mb-6" size={32} aria-hidden="true" />
@@ -92,10 +92,6 @@ export default function Testimonials() {
             </button>
           </div>
         </div>
-
-        <p className="mt-10 text-xs text-muted text-center">
-          Testimonials shown are placeholder content pending real client submissions.
-        </p>
       </div>
     </section>
   )

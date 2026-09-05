@@ -1,6 +1,7 @@
 import Hero from '../components/Hero'
 import AboutSection from '../components/AboutSection'
 import StatsSection from '../components/StatsSection'
+import OwnerSection from '../components/OwnerSection'
 import ServicesSection from '../components/ServicesSection'
 import ProjectsSection from '../components/ProjectsSection'
 import InvestmentSection from '../components/InvestmentSection'
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <StatsSection />
+      <OwnerSection />
       <ServicesSection />
       <ProjectsSection />
       <InvestmentSection />
